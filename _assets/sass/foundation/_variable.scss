@@ -1,0 +1,48 @@
+// コンテンツエリアのwidthを指定
+$content-width: 1200px;
+
+// コンテンツエリアのインラインパディングサイズを指定
+$paddingInlineSize: 20px;
+
+// ヘッダーの高さを指定(pc,tb,sp)
+:root {
+	--header-height: 74px;
+	--header-service-height: 74px;
+
+	@media screen and (max-width:949px) {
+		--header-height: 74px;
+		--header-service-height: 74px;
+	}
+
+	@media screen and (max-width:767px) {
+		--header-height: 49px;
+		--header-service-height: 49px;
+	}
+}
+
+// z-index管理
+:root {
+	// ヘッダー用
+	--z-index-header: 1000;
+	// サービスページSP 問い合わせボタン用
+	--z-service-contact-btn: 800;
+	// サービスページSP 問い合わせフォーム用
+	--z-service-contact-form: 900;
+}
+
+// ベースのline-heightを指定
+$base-line-height: 1.5;
+
+// box-shadowに使用
+$box-shadow-sm: 0 5px 10px 0 rgba(#000000, 0.1);
+$box-shadow-md: 0 10px 20px 0 rgba(#000000, 0.1);
+
+// 三角形のclip-path
+$clip-triangle-top: polygon(50% 0, 100% 100%, 0 100%);
+$clip-triangle-bottom: polygon(0 0, 100% 0, 50% 100%);
+$clip-triangle-right: polygon(0 0, 100% 50%, 0 100%);
+$clip-triangle-left: polygon(0 50%, 100% 0, 100% 100%);
+$clip-triangle-lower-left: polygon(0 0, 100% 100%, 0 100%);
+$clip-triangle-upper-left: polygon(0 0, 100% 0, 0 100%);
+$clip-triangle-lower-right: polygon(100% 0, 100% 100%, 0 100%);
+$clip-triangle-upper-right: polygon(0 0, 100% 0, 100% 100%);

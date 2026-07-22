@@ -1,0 +1,449 @@
+/* // VARIABLES
+----------------------------------------------- */
+:root {
+	/* body背景カラー */
+	--body-color: #abb6c3;
+	/* ツールバーカラー */
+	--toolbar-color: #090e14;
+	/* サイドバーカラー */
+	--sidebar-color: #2d323a;
+	/* (公開済み)投稿タイトルカラー*/
+	--post-title-color: #606060;
+	/* (公開済み)投稿タイトルカラー(hover) */
+	--post-title-color-h: #222;
+}
+
+/* // 色替え
+----------------------------------------------- */
+/* body背景カラー */
+body {
+	background-color: var(--body-color);
+}
+
+/* ツールバーカラー */
+#wpadminbar,
+#wpadminbar a.ab-item:before,
+#wpadminbar a.ab-item #wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+#wpadminbar .menupop .ab-sub-wrapper,
+#wpadminbar .shortlink-input,
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar .ab-top-menu > li.hover > .ab-item {
+	background: var(--toolbar-color);
+}
+/* サイドバーカラー */
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+#adminmenu .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
+	background-color: var(--sidebar-color);
+}
+
+/* (公開済み)投稿タイトルカラー */
+.wp-list-table a.row-title {
+	background-color: var(--post-title-color);
+	transition: 0.2s;
+}
+/* (公開済み)投稿タイトルカラー:hover */
+.wp-list-table a.row-title:hover {
+	background-color: var(--post-title-color-h);
+}
+
+/* (非公開・下書き)投稿タイトルカラー */
+.wp-list-table tr.status-private a.row-title,
+.wp-list-table tr.status-draft a.row-title {
+	background-color: #aaa;
+}
+/* (非公開・下書き)投稿タイトルカラー:hover */
+.wp-list-table tr.status-private a.row-title:hover,
+.wp-list-table tr.status-draft a.row-title:hover {
+	background-color: #888;
+}
+
+/* // 基本
+----------------------------------------------- */
+html,
+body {
+	font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "MS P Gothic", "MS Pゴシック", sans-serif !important;
+	font-size: 16px;
+	line-height: 1.8em;
+	padding: 0;
+	margin: 0;
+}
+
+:placeholder-shown {
+	color: #ccc;
+}
+::-webkit-input-placeholder {
+	color: #ccc;
+}
+:-moz-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #ccc;
+}
+
+img {
+	height: auto;
+}
+html.on img {
+	height: auto;
+}
+
+/* // サイドバー
+----------------------------------------------- */
+#adminmenu a {
+	color: #fff;
+}
+
+#adminmenu li.wp-has-submenu:hover {
+	background-color: transparent;
+}
+
+/* メニューを閉じる */
+#collapse-button .collapse-button-label {
+	top: 3px;
+}
+
+/* // 投稿一覧ページ
+----------------------------------------------- */
+/* タイトル */
+.wp-list-table a.row-title {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	color: #fff;
+	border-radius: 3px;
+	font-weight: 400;
+	line-height: 1.4;
+	font-size: 14px;
+	padding: 8px 32px 8px 12px;
+	transition: 0.3s;
+}
+
+.wp-list-table a.row-title:after {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 90%;
+	content: "\e944";
+	font-family: "iconfontA";
+	font-weight: bold;
+}
+.wp-list-table a.row-title:hover {
+	transform: scale(1.01);
+	color: #ff0;
+}
+
+/* インデント */
+.wp-list-table tr.level-1 a.row-title {
+	font-size: calc(13px * 0.9);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	opacity: 0.9;
+}
+.wp-list-table tr.level-2 a.row-title {
+	font-size: calc(13px * 0.9);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	opacity: 0.9;
+}
+.wp-list-table tr.level-3 a.row-title {
+	font-size: calc(13px * 0.8);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	opacity: 0.8;
+}
+.wp-list-table tr.level-4 a.row-title {
+	font-size: calc(13px * 0.8);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	opacity: 0.7;
+}
+
+.widefat tfoot tr td,
+.widefat tfoot tr th,
+.widefat thead tr td,
+.widefat thead tr th {
+	border-right: 1px dotted #a2a2a2;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+	width: 180px;
+}
+.folded #adminmenu,
+.folded #adminmenu li.menu-top,
+.folded #adminmenuback,
+.folded #adminmenuwrap {
+	width: 36px;
+}
+#wpcontent {
+	margin-left: 180px;
+}
+#adminmenu .wp-submenu {
+	left: 180px;
+}
+#adminmenu .wp-submenu a {
+	font-size: 12px;
+}
+
+#adminmenu .sideNoUse {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	line-height: 1.3;
+	font-weight: bold;
+	font-size: 82%;
+	text-align: center;
+	display: block;
+	padding: 8px 0;
+	color: #fff;
+	background-color: #fff;
+	color: #9f0202;
+}
+
+/* // wpfooter
+----------------------------------------------- */
+#wpfooter {
+	display: none;
+}
+
+/* // 更新通知
+----------------------------------------------- */
+/* プラグイン */
+#adminmenu .awaiting-mod,
+#adminmenu .menu-counter,
+#adminmenu .update-plugins {
+	display: none;
+}
+
+/*====================================================================================================
+タクソノミー
+====================================================================================================*/
+
+/* タクソノミー編集ページのコンテンツエリア
+----------------------------------------------- */
+#edittag {
+	max-width: 1200px;
+}
+
+/* タクソノミー一覧ページの「説明」登録項目
+----------------------------------------------- */
+.form-field.term-description-wrap {
+	display: none;
+}
+
+/* タクソノミー編集ページの「説明」
+----------------------------------------------- */
+body.edit-tags-php th.manage-column.column-description,
+body.edit-tags-php td.description.column-description {
+	display: none;
+}
+/* 非表示にすると幅が空いてしまうので、タイトル幅を100%にして調整 */
+body.edit-tags-php th#name.manage-column.column-name {
+	width: 100%;
+}
+
+/* タクソノミー編集ページのタブ
+----------------------------------------------- */
+.form-table > tbody > tr.acf-tab-wrap .acf-tab-group.acf-tab-group {
+	padding-left: 0;
+}
+
+/*====================================================================================================
+記事編集ページ
+====================================================================================================*/
+#poststuff .postbox-header {
+	background-color: #ebebeb;
+}
+#poststuff h2 {
+	color: white;
+	padding: 12px;
+}
+
+/*====================================================================================================
+ACF
+====================================================================================================*/
+/* 記事編集ページ
+----------------------------------------------- */
+.acf-field .acf-label > label {
+	margin-bottom: 5px !important;
+	line-height: 1.3;
+}
+.acf-field .acf-label label {
+	font-size: 14px !important;
+	display: block !important;
+	background-color: #e6e6e6 !important;
+	padding: 10px 7px !important;
+	text-shadow: 0 0 0 #ffffff !important;
+	color: #222 !important;
+	font-weight: 600 !important;
+	cursor: default;
+	border-radius: 1px;
+	border-left: 4px solid #000;
+}
+
+/* 記事編集ページ - カスタムフィールドのスラッグ名
+----------------------------------------------- */
+.acf-field .slugLabel {
+	margin-bottom: 0 !important;
+	font-size: 11px;
+	color: #333;
+	margin: 0 0 0 10px;
+	display: inline-block;
+	font-weight: 300;
+}
+
+/*====================================================================================================
+Admin Menu Editor
+====================================================================================================*/
+/* セパレーター
+----------------------------------------------- */
+#adminmenu li.wp-menu-separator {
+	background-color: #575d6b;
+	height: 1px;
+	margin: 12px 10px;
+}
+
+/*====================================================================================================
+Admin Columns
+====================================================================================================*/
+/* 画像フィールドで表示される画像をcontain表示
+----------------------------------------------- */
+.ac-image:not(body).-cover img:not(#_) {
+	object-fit: contain;
+}
+
+/*====================================================================================================
+VK BLOCKS
+====================================================================================================*/
+/* タクソノミー一覧ページに追加される「色」の登録項目を非表示 */
+body.edit-tags-php .form-field:has(input#term_color_nonce) {
+	display: none;
+}
+body.edit-tags-php th.manage-column.column-color,
+body.edit-tags-php td.color.column-color {
+	display: none;
+}
+
+/*====================================================================================================
+管理画面のダッシュボードページに動線UIを追加
+====================================================================================================*/
+/* animHoverA */
+.animHoverA {
+	display: inline-block;
+}
+.animHoverA:hover {
+	animation: animHoverA 0.55s infinite ease-out;
+	animation-iteration-count: 1;
+	transform: translateY(0);
+}
+@keyframes animHoverA {
+	0% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-4px);
+	}
+	50% {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(-2px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes animHoverAnone {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.topNavi__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	gap: 20px;
+}
+
+.topNavi__item {
+	background-color: #fff;
+	padding: 16px 20px;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	width: 280px;
+	line-height: 1.4;
+}
+.topNavi__item > * + * {
+	margin-top: 0.6em;
+}
+
+.topNavi__ttl {
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.topNavi__btn {
+	display: block;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #05477c;
+	text-align: center;
+	padding: 16px;
+	font-style: normal;
+	text-decoration: none;
+}
+.topNavi__btn:hover {
+	opacity: 1;
+	color: #fff;
+}
+.topNavi__btnB {
+	display: block;
+	border-radius: 3px;
+	color: #05477c;
+	background-color: #fff;
+	border: 1px solid #05477c;
+	text-align: center;
+	padding: 16px;
+	font-style: normal;
+	text-decoration: none;
+}
+.topNavi__btnB:hover {
+	opacity: 1;
+	color: #05477c;
+}
+.topNavi__separator {
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+	margin-top: 1.8em;
+	margin-bottom: 1.8em;
+}
+.topNavi__separator--s {
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}

@@ -1,0 +1,28 @@
+.l-breadcrumb {
+	position: relative;
+	display: flex;
+	flex-wrap: flex;
+	padding-top: 100px;
+	column-gap: 8px;
+	row-gap: 5px;
+	padding-inline: clamp($paddingInlineSize, 100 / 1920 * 100vw, 100px);
+
+
+	@media screen and (max-width:767px) {
+		padding-top: 25px;
+		padding-inline: $paddingInlineSize;
+	}
+
+	&>* {
+		width: fit-content;
+	}
+
+	&>span:last-of-type {
+		flex: 1;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		/* 制限したい行数を指定 */
+		overflow: hidden;
+	}
+}

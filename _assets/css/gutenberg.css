@@ -1,0 +1,527 @@
+@charset "utf-8";
+
+/*====================================================
+SETTINGS
+====================================================*/
+/* BASE
+----------------------------------------------- */
+.mce-content-body,
+.editor-styles-wrapper,
+.wp-block-post-content,
+.l-BlockContent {
+	font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+/* Font Size
+----------------------------------------------- */
+.mce-content-body > *,
+.editor-styles-wrapper > *,
+.l-BlockContent > * {
+	font-size: clamp(14px, 16 / 1440 * 100vw, 16px);
+}
+
+/* 要素間のマージン
+----------------------------------------------- */
+.mce-content-body > * + *,
+.editor-styles-wrapper > * + *,
+.wp-block-post-content > * + *, /*管理画面エディター用*/
+.l-BlockContent > * + * {
+	margin-top: 1.7em;
+}
+.mce-content-body > * ,
+.editor-styles-wrapper > * ,
+.wp-block-post-content > * , /*管理画面エディター用*/
+.l-BlockContent > * {
+	margin-bottom: 1.4em;
+}
+
+/* img svg
+----------------------------------------------- */
+.mce-content-body img,
+.mce-content-body svg,
+.editor-styles-wrapper img,
+.editor-styles-wrapper svg,
+.l-BlockContent img,
+.l-BlockContent svg {
+	width: auto;
+	max-width: 100%;
+}
+
+/* iframe
+----------------------------------------------- */
+.mce-content-body iframe,
+.editor-styles-wrapper iframe,
+.l-BlockContent iframe {
+	width: 100%;
+	aspect-ratio: 16/9;
+}
+
+/* クラシックエディター用設定
+----------------------------------------------- */
+.mce-content-body {
+	padding: 10px;
+}
+
+/* ページタイトル
+----------------------------------------------- */
+.mce-content-body h1,
+.editor-styles-wrapper h1,
+.l-BlockContent h1 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/*====================================================
+H2
+====================================================*/
+.mce-content-body h2,
+.editor-styles-wrapper h2,
+.l-BlockContent h2 {
+	position: relative;
+	font-weight: bold;
+	line-height: 1.4;
+	font-size: clamp(17px, 30 / 1440 * 100vw, 30px);
+	padding-top: 21px;
+	margin-top: 2.5em;
+	margin-bottom: 1em;
+}
+
+.mce-content-body h2::before,
+.editor-styles-wrapper h2::before,
+.l-BlockContent h2::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #0166c9;
+	width: 90px;
+	height: 2px;
+	box-shadow: 0 0 9px 2px rgba(1, 102, 201, 0.67);
+}
+
+@media screen and (max-width: 767px) {
+	.mce-content-body h2::before,
+	.editor-styles-wrapper h2::before,
+	.l-BlockContent h2::before {
+		width: 56px;
+	}
+}
+
+/*====================================================
+H3
+====================================================*/
+.mce-content-body h3,
+.editor-styles-wrapper h3,
+.l-BlockContent h3 {
+	position: relative;
+	font-weight: bold;
+	line-height: 1.4;
+	font-size: clamp(15px, 25 / 1440 * 100vw, 25px);
+	padding-left: 0.75em;
+}
+
+.mce-content-body h3::before,
+.editor-styles-wrapper h3::before,
+.l-BlockContent h3::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	translate: 0 -50%;
+	background-color: #0166c9;
+	width: 3px;
+	height: 55%;
+	box-shadow: 0 0 9px 2px rgba(1, 102, 201, 0.67);
+}
+
+/*====================================================
+H4
+====================================================*/
+.mce-content-body h4,
+.editor-styles-wrapper h4,
+.l-BlockContent h4 {
+	position: relative;
+	font-weight: bold;
+	line-height: 1.5;
+	font-size: clamp(14px, 20 / 1440 * 100vw, 20px);
+}
+/*====================================================
+p
+====================================================*/
+.mce-content-body p,
+.editor-styles-wrapper p,
+.l-BlockContent p {
+	line-height: 2;
+}
+
+/*====================================================
+UL
+====================================================*/
+.mce-content-body ul > li,
+.editor-styles-wrapper ul > li,
+.l-BlockContent ul > li {
+	position: relative;
+	padding-left: 1em;
+}
+.mce-content-body ul > li::before,
+.editor-styles-wrapper ul > li::before,
+.l-BlockContent ul > li::before {
+	content: "・";
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1em;
+}
+
+/*====================================================
+OL
+====================================================*/
+.mce-content-body ol,
+.editor-styles-wrapper ol,
+.l-BlockContent ol {
+	position: relative;
+	counter-reset: number 0;
+}
+
+.mce-content-body ol > li,
+.editor-styles-wrapper ol > li,
+.l-BlockContent ol > li {
+	position: relative;
+	padding-left: 1.5em;
+}
+.mce-content-body ol > li::before,
+.editor-styles-wrapper ol > li::before,
+.l-BlockContent ol > li::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	counter-increment: number 1;
+	content: counter(number) ".";
+	width: 1.5em;
+	text-align: right;
+}
+
+/*====================================================
+A
+====================================================*/
+.mce-content-body a:not([class]),
+.editor-styles-wrapper a:not([class]),
+.l-BlockContent a:not([class]) {
+	text-decoration: underline;
+	transition: all 0.3s ease;
+	transition-property: opacity;
+}
+
+.mce-content-body a:not([class]):focus-visible,
+.editor-styles-wrapper a:not([class]):focus-visible,
+.l-BlockContent a:not([class]):focus-visible {
+	opacity: 0.8;
+}
+@media (any-hover: hover) {
+	.mce-content-body a:not([class]):hover,
+	.editor-styles-wrapper a:not([class]):hover,
+	.l-BlockContent a:not([class]):hover {
+		opacity: 0.8;
+	}
+}
+
+/*====================================================
+TABLE
+====================================================*/
+.mce-content-body table,
+.editor-styles-wrapper table,
+.l-BlockContent table {
+	position: relative;
+	color: #303030;
+}
+
+.mce-content-body table::before,
+.editor-styles-wrapper table::before,
+.l-BlockContent table::before {
+	z-index: -2;
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: #fff;
+}
+
+.mce-content-body table::after,
+.editor-styles-wrapper table::after,
+.l-BlockContent table::after {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* background: url("../img/common/common_table_bg.png") no-repeat center center/contain; */
+	background-image: url("../img/common/common_table_bg.png");
+	background-size: 100% 100%;
+}
+
+/*====================================================
+IMG
+====================================================*/
+/* left
+----------------------------------------------- */
+.mce-content-body img.alignleft,
+.editor-styles-wrapper img.alignleft,
+.l-BlockContent img.alignleft {
+	margin-right: auto;
+}
+
+/* center
+----------------------------------------------- */
+.mce-content-body img.aligncenter,
+.editor-styles-wrapper img.aligncenter,
+.l-BlockContent img.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* right
+----------------------------------------------- */
+.mce-content-body img.alignright,
+.editor-styles-wrapper img.alignright,
+.l-BlockContent img.alignright {
+	margin-left: auto;
+}
+
+/*====================================================
+figcaption
+====================================================*/
+.mce-content-body figcaption,
+.editor-styles-wrapper figcaption,
+.l-BlockContent figcaption {
+	font-weight: 300;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+	.mce-content-body figcaption,
+	.editor-styles-wrapper figcaption,
+	.l-BlockContent figcaption {
+		font-size: 10px;
+	}
+}
+
+/*====================================================
+GAP
+====================================================*/
+.gap100 {
+	gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+}
+.gap90 {
+	gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+}
+.gap80 {
+	gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+}
+.gap70 {
+	gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+}
+.gap60 {
+	gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+}
+.gap50 {
+	gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+}
+.gap40 {
+	gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+}
+.gap30 {
+	gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+}
+.gap20 {
+	gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+}
+.gap10 {
+	gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+}
+.row-gap100 {
+	row-gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+}
+.row-gap90 {
+	row-gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+}
+.row-gap80 {
+	row-gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+}
+.row-gap70 {
+	row-gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+}
+.row-gap60 {
+	row-gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+}
+.row-gap50 {
+	row-gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+}
+.row-gap40 {
+	row-gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+}
+.row-gap30 {
+	row-gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+}
+.row-gap20 {
+	row-gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+}
+.row-gap10 {
+	row-gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+}
+.column-gap100 {
+	column-gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+}
+.column-gap90 {
+	column-gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+}
+.column-gap80 {
+	column-gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+}
+.column-gap70 {
+	column-gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+}
+.column-gap60 {
+	column-gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+}
+.column-gap50 {
+	column-gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+}
+.column-gap40 {
+	column-gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+}
+.column-gap30 {
+	column-gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+}
+.column-gap20 {
+	column-gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+}
+.column-gap10 {
+	column-gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+}
+
+@media screen and (max-width: 767px) {
+	.sp_gap100 {
+		gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+	}
+	.sp_gap90 {
+		gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+	}
+	.sp_gap80 {
+		gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+	}
+	.sp_gap70 {
+		gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+	}
+	.sp_gap60 {
+		gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+	}
+	.sp_gap50 {
+		gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+	}
+	.sp_gap40 {
+		gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+	}
+	.sp_gap30 {
+		gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+	}
+	.sp_gap20 {
+		gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+	}
+	.sp_gap10 {
+		gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+	}
+	.sp_row-gap100 {
+		row-gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+	}
+	.sp_row-gap90 {
+		row-gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+	}
+	.sp_row-gap80 {
+		row-gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+	}
+	.sp_row-gap70 {
+		row-gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+	}
+	.sp_row-gap60 {
+		row-gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+	}
+	.sp_row-gap50 {
+		row-gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+	}
+	.sp_row-gap40 {
+		row-gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+	}
+	.sp_row-gap30 {
+		row-gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+	}
+	.sp_row-gap20 {
+		row-gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+	}
+	.sp_row-gap10 {
+		row-gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+	}
+	.sp_column-gap100 {
+		column-gap: clamp(60px, 100 / 1440 * 100vw, 100px);
+	}
+	.sp_column-gap90 {
+		column-gap: clamp(54px, 90 / 1440 * 100vw, 90px);
+	}
+	.sp_column-gap80 {
+		column-gap: clamp(48px, 80 / 1440 * 100vw, 80px);
+	}
+	.sp_column-gap70 {
+		column-gap: clamp(42px, 70 / 1440 * 100vw, 70px);
+	}
+	.sp_column-gap60 {
+		column-gap: clamp(36px, 60 / 1440 * 100vw, 60px);
+	}
+	.sp_column-gap50 {
+		column-gap: clamp(30px, 50 / 1440 * 100vw, 50px);
+	}
+	.sp_column-gap40 {
+		column-gap: clamp(24px, 40 / 1440 * 100vw, 40px);
+	}
+	.sp_column-gap30 {
+		column-gap: clamp(18px, 30 / 1440 * 100vw, 30px);
+	}
+	.sp_column-gap20 {
+		column-gap: clamp(20px, 20 / 1440 * 100vw, 20px);
+	}
+	.sp_column-gap10 {
+		column-gap: clamp(10px, 10 / 1440 * 100vw, 10px);
+	}
+}
+
+/*====================================================
+デフォルトスタイルの調整
+====================================================*/
+
+/* 「区切り」の幅調整 */
+.wp-block-separator {
+	border-width: 1px;
+	border-bottom: none;
+}
+
+/*====================================================
+Flexible Table Blockの調整
+====================================================*/
+
+/* th
+----------------------------------------------- */
+.l-BlockContent .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr th,
+.editor-styles-wrapper .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr th,
+.l-BlockContent .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr td,
+.editor-styles-wrapper .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr td {
+	/* background-color: #fff; */
+	background-color: transparent;
+}
+
+/* ボーダーカラー
+----------------------------------------------- */
+.l-BlockContent .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr th,
+.editor-styles-wrapper .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr th,
+.l-BlockContent .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr td,
+.editor-styles-wrapper .wp-block-flexible-table-block-table.wp-block-flexible-table-block-table > table tr td {
+	border-color: #0166c9;
+}

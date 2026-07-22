@@ -1,0 +1,53 @@
+.c-sectionTtlC {
+	text-align: center;
+	width: fit-content;
+	margin-inline: auto;
+}
+
+.c-sectionTtlC_en {
+	font-family: $din;
+	font-weight: bold;
+	line-height: 1;
+	letter-spacing: 0.16em;
+	font-size: clamp(50px, 70 / 1440 * 100vw, 70px);
+	color: rgba($color: #0166C9, $alpha: 0.22);
+
+	@media screen and (max-width:767px) {
+		font-size: 50px;
+	}
+}
+
+.c-sectionTtlC__ja {
+	color: var(--color-txt-white);
+	font-weight: bold;
+	line-height: 1;
+	letter-spacing: 0.16em;
+	font-size: clamp(25px, 35 / 1440 * 100vw, 35px);
+	margin-top: -20px;
+}
+
+// border bottom
+// -----------------------------------------------
+.c-sectionTtlC--border {
+	position: relative;
+	padding-bottom: 32px;
+
+	@media screen and (max-width:767px) {
+		padding-bottom: 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		translate: -50% 0;
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-bg-white);
+
+		@media screen and (max-width:767px) {
+			content: none;
+		}
+	}
+}

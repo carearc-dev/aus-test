@@ -1,0 +1,50 @@
+.p-thanks__inner {
+	min-height: 80svh;
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	text-align: center;
+}
+
+.p-thanks__img {
+	width: 135px;
+
+	@media screen and (max-width:767px) {
+		width: 56px;
+	}
+
+	&>img {
+		height: 100%;
+	}
+}
+
+.p-thanks__en {
+	font-size: clamp(15px, 25 / 1440 * 100vw, 25px);
+	margin-top: 27px;
+
+	@media screen and (max-width:767px) {
+		font-size: 15px;
+		margin-top: 33px;
+	}
+}
+
+.p-thanks__head {
+	font-size: clamp(25px, 50 / 1440 * 100vw, 50px);
+	margin-top: 27px;
+
+	@media screen and (max-width:767px) {
+		font-size: 20px;
+		margin-top: 17px;
+	}
+}
+
+.p-thanks__body {
+	line-height: 2;
+	font-size: clamp(13px, 20 / 1440 * 100vw, 20px);
+	margin-top: 16px;
+
+	@media screen and (max-width:767px) {
+		font-size: 13px;
+		margin-top: 20px;
+	}
+}

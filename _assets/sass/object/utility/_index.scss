@@ -1,0 +1,59 @@
+// ユーティリティ用スタイル
+
+// viewport change - display none
+.u-spNone {
+	display: block;
+}
+
+.u-pcNone {
+	display: none;
+	visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+	.u-spNone {
+		display: none;
+		visibility: hidden;
+	}
+
+	.u-pcNone {
+		display: block;
+		visibility: visible;
+	}
+}
+
+// text-indent
+.u-ti1em {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+.u-ti2em {
+	padding-left: 2em;
+	text-indent: -2em;
+}
+
+.u-ti3em {
+	padding-left: 3em;
+	text-indent: -3em;
+}
+
+.u-ti4em {
+	padding-left: 4em;
+	text-indent: -4em;
+}
+
+.u-ti5em {
+	padding-left: 5em;
+	text-indent: -5em;
+}
+
+// 背景色
+.u-bg-gray {
+	background-color: var(--color-bg-gray);
+}
+
+// テキストカラー
+.u-color-black {
+	color: var(--color-txt-black);
+}
